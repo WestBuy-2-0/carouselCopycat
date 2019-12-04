@@ -30,14 +30,20 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "jest": "^24.9.0",
+    "jest-styled-components": "^6.3.4",
     "jquery": "^3.4.1",
     "live-server": "^1.2.1",
+    "lodash": "^4.17.15",
     "mysql": "^2.17.1",
     "nodemon": "^2.0.1",
     "path": "^0.12.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "styled-components": "^4.4.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.6"
   }
 }
