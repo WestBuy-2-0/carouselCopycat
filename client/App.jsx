@@ -18,7 +18,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Carousel title="Carousel">
+      <Carousel title="People Also Bought">
         <Item>Item 0</Item>
         <Item>Item 1</Item>
         <Item>Item 2</Item>

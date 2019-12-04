@@ -50,9 +50,6 @@ class Carousel extends React.Component{
     const {children} = this.props;
     const numItems = children.length || 1;
 
-    /* this.setState({
-      position: position === numItems - 1 ? 0 : position + 1
-    }); */
     this.doSliding('next', position === numItems - 1 ? 0 : position + 1);
   };
 
@@ -66,13 +63,14 @@ class Carousel extends React.Component{
 
   render() {
     const {title, children} = this.props;
+    const {sliding, direction, position} = this.state;
 
     return (
       <div>
         <h2>{title}</h2>
 
         <Wrapper>
-          <CarouselContainer>
+          <CarouselContainer sliding={sliding} direction={direction}>
             {children.map((child, index) => (
               <CarouselSlot key={index} order={this.getOrder(index)}>
                 {child}
