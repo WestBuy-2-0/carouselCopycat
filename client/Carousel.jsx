@@ -9,10 +9,12 @@ class Carousel extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      position: 0
+      position: 0,
+      sliding: false
     };
     this.getOrder = this.getOrder.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
+    this.doSliding = this.doSliding.bind(this);
   };
 
   getOrder(itemIndex) {
@@ -25,6 +27,19 @@ class Carousel extends React.Component{
     }
 
     return itemIndex - position;
+  };
+
+  doSliding(position) {
+    this.setState({
+      sliding: true,
+      position
+    });
+
+    setTimeout(() => {
+      this.setState({
+        sliding: false
+      });
+    }, 50);
   };
 
   nextSlide() {
