@@ -10,10 +10,12 @@ class Carousel extends React.Component{
     super(props);
     this.state = {
       position: 0,
-      sliding: false
+      sliding: false,
+      direction: 'next'
     };
     this.getOrder = this.getOrder.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
+    this.prevSlide = this.prevSlide.bind(this);
     this.doSliding = this.doSliding.bind(this);
   };
 
@@ -29,9 +31,10 @@ class Carousel extends React.Component{
     return itemIndex - position;
   };
 
-  doSliding(position) {
+  doSliding(direction, position) {
     this.setState({
       sliding: true,
+      direction,
       position
     });
 
@@ -47,9 +50,18 @@ class Carousel extends React.Component{
     const {children} = this.props;
     const numItems = children.length || 1;
 
-    this.setState({
+    /* this.setState({
       position: position === numItems - 1 ? 0 : position + 1
-    });
+    }); */
+    this.doSliding('next', position === numItems - 1 ? 0 : position + 1);
+  };
+
+  prevSlide() {
+    const {position} = this.state;
+    const {children} = this.props;
+    const numItems = children.length;
+
+    this.doSliding('prev', position === 0 ? numItems - 1 : position - 1);
   };
 
   render() {
