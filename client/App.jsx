@@ -1,33 +1,30 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 
-import Carousel from './Carousel.jsx';
-
-const Product = styled.div`
-  background: blue;
+const Title = styled.h1`
+  font-size: 1.5em;
   text-align: center;
-  padding: 50px;
-  color: yellow;
+  color: palevioletred;
+`;
+
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
 `
 
-class App extends Component {
+class App extends React.Component {
   constructor() {
     super();
     this.state = {};
-  };
+  }
 
   render() {
     return (
-      <div>
-       <Carousel title="Carousel">
-        <Product>Product</Product>
-        <Product>Product</Product>
-        <Product>Product</Product>
-        <Product>Product</Product>
-      </Carousel>
-      </div>
+      <Wrapper>
+        <Title>Hello World, this is my first styled component!</Title>
+      </Wrapper>
     );
-  };
-};
+  }
+}
 
 export default App;
