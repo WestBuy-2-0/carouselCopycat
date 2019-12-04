@@ -24,6 +24,8 @@ class Carousel extends React.Component{
     this.doSliding = this.doSliding.bind(this);
   };
 
+  /* Takes the DOM index of an item (its initial position on the page) and returns
+  the place it should appear in. */
   getOrder(itemIndex) {
     const {position} = this.state;
     const {children} = this.props;
@@ -50,6 +52,7 @@ class Carousel extends React.Component{
     }, 50);
   };
 
+  // Increment to the next slide.
   nextSlide() {
     const {position} = this.state;
     const {children} = this.props;
@@ -58,6 +61,7 @@ class Carousel extends React.Component{
     this.doSliding('next', position === numItems - 1 ? 0 : position + 1);
   };
 
+  // Go to the previous slide.
   prevSlide() {
     const {position} = this.state;
     const {children} = this.props;
