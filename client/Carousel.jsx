@@ -12,6 +12,7 @@ class Carousel extends React.Component{
       position: 0
     };
     this.getOrder = this.getOrder.bind(this);
+    this.nextSlide = this.nextSlide.bind(this);
   };
 
   getOrder(itemIndex) {
@@ -24,6 +25,16 @@ class Carousel extends React.Component{
     }
 
     return itemIndex - position;
+  };
+
+  nextSlide() {
+    const {position} = this.state;
+    const {children} = this.props;
+    const numItems = children.length || 1;
+
+    this.setState({
+      position: position === numItems - 1 ? 0 : position + 1
+    });
   };
 
   render() {
