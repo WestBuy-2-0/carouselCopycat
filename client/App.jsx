@@ -1,16 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
+import Carousel from './Carousel.jsx';
 
-const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
-`
+const Item = styled.div`
+  background: blue;
+  text-align: center;
+  padding: 50px;
+  color: yellow;
+`;
 
 class App extends React.Component {
   constructor() {
@@ -20,9 +18,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <Wrapper>
-        <Title>Hello World, this is my first styled component!</Title>
-      </Wrapper>
+      <Carousel title="Carousel">
+        <Item>Item</Item>
+        <Item>Item</Item>
+        <Item>Item</Item>
+        <Item>Item</Item>
+      </Carousel>
     );
   }
 }
