@@ -14,7 +14,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {};
-  }
+  };
 
   render() {
     return (
@@ -25,7 +25,7 @@ class App extends React.Component {
         <Item>Item 3</Item>
       </Carousel>
     );
-  }
-}
+  };
+};
 
 export default App;
