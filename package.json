@@ -1,0 +1,43 @@
+{
+  "name": "carousel",
+  "version": "1.0.0",
+  "description": "Image carousel framework for features such as Recommended Accessories / Frequently Bought Together and People Ultimately Bought.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "webpack -d --watch & live-server --port=3030 --watch=dist --open=dist",
+    "start-oh": "webpack -d --watch",
+    "server_start": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmalesa/carousel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nmalesa/carousel/issues"
+  },
+  "homepage": "https://github.com/nmalesa/carousel#readme",
+  "dependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "axios": "^0.19.0",
+    "babel-loader": "^8.0.6",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jest": "^24.9.0",
+    "jquery": "^3.4.1",
+    "live-server": "^1.2.1",
+    "mysql": "^2.17.1",
+    "nodemon": "^2.0.1",
+    "path": "^0.12.7",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
