@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import CarouselContainer from './CarouselContainer.jsx';
 import CarouselSlot from './CarouselSlot.jsx';
 import Wrapper from './Wrapper.jsx';
+
+const Title = styled.h2`
+  font-family: Arial, sans-serif
+`;
 
 class Carousel extends React.Component{
   constructor(props) {
@@ -67,7 +72,7 @@ class Carousel extends React.Component{
 
     return (
       <div>
-        <h2>{title}</h2>
+        <Title>{title}</Title>
 
         <Wrapper>
           <CarouselContainer sliding={sliding} direction={direction}>
