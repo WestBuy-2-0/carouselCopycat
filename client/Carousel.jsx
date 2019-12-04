@@ -81,7 +81,8 @@ class Carousel extends React.Component{
           </CarouselContainer>
         </Wrapper>
 
-        {/* Temporary button to test functionality. */}
+        {/* Temporary buttons to test functionality. */}
+        <button onClick = {this.prevSlide}>Previous</button>
         <button onClick={this.nextSlide}>Next</button>
       </div>
     );
