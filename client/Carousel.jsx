@@ -8,6 +8,7 @@ import Wrapper from './Wrapper.jsx';
 import LeftArrow from './LeftArrow.jsx';
 import CartButton from './CartButton.jsx';
 
+// TO DO:  Add all styled components to a HelperComponents.jsx file
 const Title = styled.h2`
   box-sizing: border-box;
   color: rgb(4, 12, 19);
@@ -18,7 +19,17 @@ const Title = styled.h2`
   margin: 0px;
   min-height: 54px;
   padding: 15px 0px;
-  width: 776.667px;
+`;
+
+const HeaderPageTracker = styled.div`
+  box-sizing: border-box;
+  color: rgb(4, 12, 19);
+  float: right;
+  font-family: Human BBY Web, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: normal;
+  margin: 24px 0px 0px 0px;
+  text-align: right;
 `;
 
 class Carousel extends React.Component{
@@ -88,6 +99,8 @@ class Carousel extends React.Component{
     return (
       <div>
         <Title>{title}</Title>
+        {/* TO DO: Make HeaderPageTracker dynamic based on number of items retrieved. */}
+        <HeaderPageTracker>Page <b>1</b> of <b>2</b></HeaderPageTracker>
 
         <LeftArrow></LeftArrow>
 

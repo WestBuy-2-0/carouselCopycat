@@ -13,7 +13,7 @@ const Image = styled.img`
 
 const Text = styled.p`
   font-family: Human BBY Web, Arial, Helvetica, sans-serif;
-  /* color: #0046be; */
+  color: rgb(4, 12, 19);
 `;
 
 const ProductItem = props => (
