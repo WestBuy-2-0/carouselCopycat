@@ -16,9 +16,10 @@ const Title = styled.h2`
   font-family: Human BBY Web, Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: normal;
-  margin: 0px;
+  margin: 0;
   min-height: 54px;
-  padding: 15px 0px;
+  padding: 15px 0;
+  width: 83.33%;
 `;
 
 const HeaderPageTracker = styled.div`
@@ -28,8 +29,15 @@ const HeaderPageTracker = styled.div`
   font-family: Human BBY Web, Arial, Helvetica, sans-serif;
   font-size: 13px;
   line-height: normal;
-  margin: 24px 0px 0px 0px;
+  margin: 24px 0 0 0;
   text-align: right;
+  width: 16.67%;
+`;
+
+const Border = styled.div`
+  border-color: rgb(197, 203, 213);
+  border-style: solid;
+  border-width: 0 0 1px;
 `;
 
 class Carousel extends React.Component{
@@ -99,12 +107,12 @@ class Carousel extends React.Component{
     return (
       <div>
         <Title>{title}</Title>
+
         {/* TO DO: Make HeaderPageTracker dynamic based on number of items retrieved. */}
         <HeaderPageTracker>Page <b>1</b> of <b>2</b></HeaderPageTracker>
 
-        <LeftArrow></LeftArrow>
-
         <Wrapper>
+          <Border></Border>
           <CarouselContainer sliding={sliding} direction={direction}>
             {children.map((child, index) => (
               <CarouselSlot key={index} order={this.getOrder(index)}>
