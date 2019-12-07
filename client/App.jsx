@@ -22,12 +22,12 @@ class App extends React.Component {
   };
 
   render() {
-    
+
     let productItem = this.state.items.map(product => <ProductItem key={product.id}
     productItem={product} />);
 
     return (
-      <Carousel title="People Also Bought">
+      <Carousel title="People also bought">
         {productItem}
       </Carousel>
     );

@@ -9,7 +9,16 @@ import LeftArrow from './LeftArrow.jsx';
 import CartButton from './CartButton.jsx';
 
 const Title = styled.h2`
+  box-sizing: border-box;
+  color: rgb(4, 12, 19);
+  float: left;
   font-family: Human BBY Web, Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: normal;
+  margin: 0px;
+  min-height: 54px;
+  padding: 15px 0px;
+  width: 776.667px;
 `;
 
 class Carousel extends React.Component{

@@ -39,6 +39,7 @@ const Image = styled.img`
   width: 1.5rem;
   height: 1.5rem;
   float: left;
+  padding: 0 1rem 0 0;
   object-fit: scale-down;
   filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
 `;
