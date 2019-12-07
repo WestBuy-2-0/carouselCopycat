@@ -6,9 +6,10 @@ import CarouselContainer from './CarouselContainer.jsx';
 import CarouselSlot from './CarouselSlot.jsx';
 import Wrapper from './Wrapper.jsx';
 import LeftArrow from './LeftArrow.jsx';
+import CartButton from './CartButton.jsx';
 
 const Title = styled.h2`
-  font-family: Arial, sans-serif
+  font-family: Human BBY Web, Arial, Helvetica, sans-serif;
 `;
 
 class Carousel extends React.Component{
@@ -86,6 +87,7 @@ class Carousel extends React.Component{
             {children.map((child, index) => (
               <CarouselSlot key={index} order={this.getOrder(index)}>
                 {child}
+                <CartButton />
               </CarouselSlot>
             ))}
           </CarouselContainer>

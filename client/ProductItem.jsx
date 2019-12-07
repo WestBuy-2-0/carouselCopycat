@@ -1,19 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import CartButton from './CartButton.jsx';
+
 const Image = styled.img`
   width: 100px;
   height: 100px;
+  display: block;
+  margin: auto;
   object-fit: scale-down;
+`;
+
+const Text = styled.p`
+  font-family: Human BBY Web, Arial, Helvetica, sans-serif;
+  /* color: #0046be; */
 `;
 
 const ProductItem = props => (
   <React.Fragment>
     <Image src={props.productItem.image}></Image>
-    <p>{props.productItem.name}</p>
+    <Text>{props.productItem.name}</Text>
     <div>STARS PLACEHOLDER</div>
-    <p>{props.productItem.price}</p>
-    <div>ADD TO CART PLACEHOLDER</div>
+    <Text><strong>{props.productItem.price}</strong></Text>
   </React.Fragment>
 );
 
