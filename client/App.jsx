@@ -3,6 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Carousel from './Carousel.jsx';
+import ProductItem from './ProductItem.jsx';
+import ProductData from './ProductData.jsx';
 
 const Item = styled.div`
   background: blue;
@@ -14,13 +16,19 @@ const Item = styled.div`
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      items: ProductData
+    };
   };
 
   render() {
+
+    let productItem = this.state.items.map(product => <ProductItem key={product.id}
+    productItem={product} />);
+
     return (
       <Carousel title="People Also Bought">
-        <Item>Item 0</Item>
+        <Item>{productItem}</Item>
         <Item>Item 1</Item>
         <Item>Item 2</Item>
         <Item>Item 3</Item>
