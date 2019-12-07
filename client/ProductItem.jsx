@@ -1,8 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Image = styled.img`
+  width: 100px;
+  height: 100px;
+  object-fit: scale-down;
+`;
 
 const ProductItem = props => (
   <React.Fragment>
-    <img src={props.productItem.image}></img>
+    <Image src={props.productItem.image}></Image>
     <p>{props.productItem.name}</p>
     <div>STARS PLACEHOLDER</div>
     <p>{props.productItem.price}</p>
@@ -11,4 +18,3 @@ const ProductItem = props => (
 );
 
 export default ProductItem;
- 
