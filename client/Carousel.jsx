@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import CarouselContainer from './CarouselContainer.jsx';
 import CarouselSlot from './CarouselSlot.jsx';
 import Wrapper from './Wrapper.jsx';
+import LeftArrow from './LeftArrow.jsx';
 
 const Title = styled.h2`
   font-family: Arial, sans-serif
@@ -78,6 +79,8 @@ class Carousel extends React.Component{
       <div>
         <Title>{title}</Title>
 
+        <LeftArrow></LeftArrow>
+
         <Wrapper>
           <CarouselContainer sliding={sliding} direction={direction}>
             {children.map((child, index) => (
@@ -91,6 +94,7 @@ class Carousel extends React.Component{
         {/* Temporary buttons to test functionality. */}
         <button onClick = {this.prevSlide}>Previous</button>
         <button onClick={this.nextSlide}>Next</button>
+
       </div>
     );
   };

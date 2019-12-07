@@ -2,8 +2,6 @@
 
 import styled from 'styled-components';
 
-/* Margin gives the effect of the carousel overflowing to the right-hand side of
-the container.  Will modify accordingly when displaying images. */
 const CarouselContainer = styled.div`
   display: flex;
   margin: 0 0 20px 20px;
