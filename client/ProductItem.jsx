@@ -19,6 +19,7 @@ const Name = styled.p`
   line-height: normal;
   max-height: 48px;
   white-space: normal;
+  height: 35px;
 `;
 
 const Price = styled.p`
@@ -31,6 +32,7 @@ const Price = styled.p`
   font-weight: bold;
   line-height: 18px;
   white-space: normal;
+  height: 35px;
 `;
 
 

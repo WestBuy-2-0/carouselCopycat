@@ -2,16 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
+  box-sizing: border-box;
   display: inline-block;
   border: none;
-  padding: 1rem 2rem;
+  padding: 0 1rem;
+  border-radius: 4px;
   margin: 0;
   text-decoration: none;
   background: rgb(255, 242, 0);
-  color: rgb(0, 0, 0);
+  color: rgb(4, 12, 19);
   font-family: Human BBY Web, Arial, Helvetica, sans-serif;
-  font-size: 1rem;
+  font-size: 15px;
   font-weight: bold;
+  height: 35px;
   cursor: pointer;
   text-align: center;
   transition: background 250ms ease-in-out,
@@ -41,7 +44,7 @@ const Image = styled.img`
   float: left;
   padding: 0 1rem 0 0;
   object-fit: scale-down;
-  filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+  filter: invert(85%);
 `;
 // <img src="http://westbuy.org/83ae4d43b337609ef65721484d59e50e.svg"></img>
 
