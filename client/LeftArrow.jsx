@@ -1,16 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faChevronLeft} from '@fortawesome/free-solid-svg-icons';
 
-const LeftArrow = (props) => {
-  return (
-    <a
-      href="#"
-      className="carousel__arrow carousel__arrow--left"
-      onClick={props.prevSlide}
-    >
-      <span className="fas fa-chevron-left"></span>
-    </a>
-  );
-};
+const LeftArrow = () => (
+  <div>
+    <FontAwesomeIcon icon={faChevronLeft} />
+  </div>
+);
 
 export default LeftArrow;

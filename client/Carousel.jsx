@@ -6,6 +6,7 @@ import CarouselContainer from './CarouselContainer.jsx';
 import CarouselSlot from './CarouselSlot.jsx';
 import Wrapper from './Wrapper.jsx';
 import LeftArrow from './LeftArrow.jsx';
+import RightArrow from './RightArrow.jsx';
 import CartButton from './CartButton.jsx';
 
 // TO DO:  Add all styled components to a HelperComponents.jsx file
@@ -125,7 +126,9 @@ class Carousel extends React.Component{
         </Wrapper>
 
         {/* Temporary buttons to test functionality. */}
+        <LeftArrow></LeftArrow>
         <button onClick = {this.prevSlide}>Previous</button>
+        <RightArrow></RightArrow>
         <button onClick={this.nextSlide}>Next</button>
 
       </div>
