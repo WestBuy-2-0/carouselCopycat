@@ -9,33 +9,33 @@ const Button = styled.button`
   border-radius: 4px;
   margin: 0;
   text-decoration: none;
-  background: rgb(255, 242, 0);
+  background: rgb(255, 215, 0);
   color: rgb(4, 12, 19);
   font-family: Human BBY Web, Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: bold;
-  height: 35px;
+  height: 2.5rem;
   cursor: pointer;
   text-align: center;
+  vertical-align: middle;
   transition: background 250ms ease-in-out,
               transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
-}
 
-button:hover,
-button:focus {
-  background: #0053ba;
-}
+  ${Button}:hover,
+  ${Button}:focus {
+    background: rgb(255, 242, 0);
+  }
 
-button:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
-}
+  ${Button}:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+  }
 
-button:active {
-  transform: scale(0.99);
-}
+  ${Button}:active {
+    transform: scale(0.99);
+  }
 `;
 
 const Image = styled.img`

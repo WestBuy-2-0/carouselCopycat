@@ -16,9 +16,7 @@ const Name = styled.p`
   color: rgb(0, 30, 115);
   font-family: Human BBY Web, Arial, Helvetica, sans-serif;
   font-size: 13px;
-  line-height: normal;
   max-height: 48px;
-  white-space: normal;
   height: 35px;
 `;
 
@@ -28,10 +26,8 @@ const Price = styled.p`
   font-family: Human BBY Web, Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-stretch: 100%;
-  font-style: normal;
   font-weight: bold;
   line-height: 18px;
-  white-space: normal;
   height: 35px;
 `;
 

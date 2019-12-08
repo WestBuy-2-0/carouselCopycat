@@ -38,6 +38,7 @@ const Border = styled.div`
   border-color: rgb(197, 203, 213);
   border-style: solid;
   border-width: 0 0 1px;
+  margin: 0 0 20px 0;
 `;
 
 class Carousel extends React.Component{
