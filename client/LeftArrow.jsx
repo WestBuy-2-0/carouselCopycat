@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faChevronLeft} from '@fortawesome/free-solid-svg-icons';
 
-const LeftArrow = () => (
-  <div>
+// import Arrows from './Arrows.jsx';
+
+const LeftArrow = (props) => (
+  <button onClick={props.prevSlide}>
     <FontAwesomeIcon icon={faChevronLeft} />
-  </div>
+  </button>
 );
 
 export default LeftArrow;
