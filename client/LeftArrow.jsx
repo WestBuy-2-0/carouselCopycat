@@ -9,6 +9,8 @@ const LeftArrowContainer = styled.div`
   grid-area: l;
   z-index: 10;
   background-color: white;
+  display: grid;
+  place-items: center;
 `;
 
 const LeftArrow = (props) => (
