@@ -2,6 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
+  background: ${props => props.yellowButton ? "rgb(255, 215, 0)" : "rgb(197, 203, 213)"};
+
+  color: ${props => props.yellowButton ? "rgb(4, 12, 19)" : "rgb(85, 85, 90)"};
+
   box-sizing: border-box;
   display: inline-block;
   border: none;
@@ -9,8 +13,6 @@ const Button = styled.button`
   border-radius: 4px;
   margin: 0;
   text-decoration: none;
-  background: rgb(255, 215, 0);
-  color: rgb(4, 12, 19);
   font-family: Human BBY Web, Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: bold;
@@ -51,7 +53,7 @@ const Image = styled.img`
 {/* TO DO: 1) Change button's styling when clicked; 2) Increment cart number */}
 
 const CartButton = props => (
-  <Button>
+  <Button onClick={props.addToCart}>
     <Image src="http://westbuy.org/83ae4d43b337609ef65721484d59e50e.svg"></Image>
     Add to Cart
   </Button>
