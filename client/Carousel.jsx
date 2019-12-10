@@ -115,19 +115,17 @@ class Carousel extends React.Component{
 
         <Wrapper>
           <Border></Border>
-          <CarouselContainer sliding={sliding} direction={direction}>
-            {children.map((child, index) => (
-              <CarouselSlot key={index} order={this.getOrder(index)}>
-                {child}
-                <CartButton />
-              </CarouselSlot>
-            ))}
-          </CarouselContainer>
+          <LeftArrow prevSlide={this.prevSlide}></LeftArrow>
+            <CarouselContainer sliding={sliding} direction={direction}>
+              {children.map((child, index) => (
+                <CarouselSlot key={index} order={this.getOrder(index)}>
+                  {child}
+                  <CartButton />
+                </CarouselSlot>
+              ))}
+            </CarouselContainer>
+          <RightArrow nextSlide={this.nextSlide}></RightArrow>
         </Wrapper>
-
-        {/* Temporary buttons to test functionality. */}
-        <LeftArrow prevSlide={this.prevSlide}></LeftArrow>
-        <RightArrow nextSlide={this.nextSlide}></RightArrow>
 
       </div>
     );
