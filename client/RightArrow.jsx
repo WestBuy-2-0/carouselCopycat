@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faChevronRight} from '@fortawesome/free-solid-svg-icons';
 
-// import Arrows from './Arrows.jsx';
+import Arrows from './Arrows.jsx';
 
 const RightArrow = (props) => (
-  <button onClick={props.nextSlide}>
+  <Arrows onClick={props.nextSlide}>
     <FontAwesomeIcon icon={faChevronRight} />
-  </button>
+  </Arrows>
 );
 
 export default RightArrow;
