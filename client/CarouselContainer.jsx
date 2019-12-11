@@ -4,9 +4,7 @@ import styled from 'styled-components';
 
 const CarouselContainer = styled.div`
   display: flex;
-  width: 100%;
   grid-area: c;
-  box-sizing: border-box;
   margin: 0 0 20px 20px;
   transition: ${(props) => props.sliding ? 'none' : 'transform 1s ease'};
 

@@ -9,7 +9,7 @@ Ordering with Flexbox:  A flexbox container presents its children in the order s
 by the order property (from low to high). */
 const CarouselSlot = styled.div`
   flex: 1 0 100%;
-  flex-basis: 15%;
+  flex-basis: 19%;
   margin-right: 20px;
   order: ${(props) => props.order};
 `;
