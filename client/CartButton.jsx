@@ -28,6 +28,7 @@ const ClickedButton = styled.button`
 const Button = styled(ClickedButton)`
   background: rgb(255, 215, 0);
   color: rgb(4, 12, 19);
+  font-size: 0.93rem;
 
   ${Button}:hover,
   ${Button}:focus {
