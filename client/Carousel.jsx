@@ -48,14 +48,13 @@ class Carousel extends React.Component{
     this.state = {
       position: 0,
       sliding: false,
-      direction: 'next',
-      clicked: true
+      direction: 'next'
     };
+
     this.getOrder = this.getOrder.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
     this.prevSlide = this.prevSlide.bind(this);
     this.doSliding = this.doSliding.bind(this);
-    this.addToCart = this.addToCart.bind(this);
   };
 
   /* Takes the DOM index of an item (its initial position on the page) and returns
@@ -104,14 +103,6 @@ class Carousel extends React.Component{
     this.doSliding('prev', position === 0 ? numItems - 1 : position - 1);
   };
 
-  addToCart() {
-    this.setState({
-      clicked: !this.state.clicked
-    });
-    console.log("I'm clicked!");
-    console.log(this.state.clicked);
-  };
-
   render() {
     const {title, children} = this.props;
     const {sliding, direction, position} = this.state;
@@ -130,7 +121,7 @@ class Carousel extends React.Component{
               {children.map((child, index) => (
                 <CarouselSlot key={index} order={this.getOrder(index)}>
                   {child}
-                  <CartButton clicked={this.state.clicked} addToCart={this.addToCart} />
+                  <CartButton />
                 </CarouselSlot>
               ))}
             </CarouselContainer>

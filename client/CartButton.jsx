@@ -54,29 +54,45 @@ const Image = styled.img`
 
 {/* TO DO: 1) Change button's styling when clicked; 2) Increment cart number */}
 
-const CartButton = props => {
+class CartButton extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      clicked: true
+    };
+    this.addToCart = this.addToCart.bind(this);
+  };
 
-  {/* SOLD OUT BUTTON
-    if(INVENTORY === 0) {
+  addToCart() {
+    this.setState({
+      clicked: !this.state.clicked
+    });
+  };
+
+  render() {
+
+    {/* SOLD OUT BUTTON
+      if(INVENTORY === 0) {
+        return (
+        <ClickedButton>Sold Out</ClickedButton>
+      );
+    }
+    */}
+
+    if (this.state.clicked) {
       return (
-      <ClickedButton>Sold Out</ClickedButton>
-    );
-  }
-  */}
-
-  if (props.clicked) {
-    return (
-      <Button clicked={props.clicked} onClick={props.addToCart}>
-        <Image src="http://westbuy.org/83ae4d43b337609ef65721484d59e50e.svg"></Image>
-        Add to Wagon
-      </Button>
-    );
-  } else {
-    return (
-      <ClickedButton clicked={props.clicked} onClick={props.addToCart}>
-        Added to Wagon
-      </ClickedButton>
-    );
+        <Button clicked={this.state.clicked} onClick={this.addToCart}>
+          <Image src="http://westbuy.org/83ae4d43b337609ef65721484d59e50e.svg"></Image>
+          Add to Wagon
+        </Button>
+      );
+    } else {
+      return (
+        <ClickedButton clicked={this.state.clicked} onClick={this.addToCart} >
+          Added to Wagon
+        </ClickedButton>
+      );
+    }
   }
 };
 
