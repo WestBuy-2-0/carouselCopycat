@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
-  background: ${props => props.clicked ? "rgb(255, 215, 0)" : "rgb(197, 203, 213)"};
-  color: ${props => props.clicked ? "rgb(4, 12, 19)" : "rgb(85, 85, 90)"};
+  background: rgb(255, 215, 0);
+  color: rgb(4, 12, 19);
   box-sizing: border-box;
   display: inline-block;
   border: none;
@@ -38,6 +38,11 @@ const Button = styled.button`
   }
 `;
 
+const ClickedButton = styled(Button)`
+  background: rgb(197, 203, 213);
+  color: rgb(85, 85, 90);
+`;
+
 const Image = styled.img`
   width: 1.5rem;
   height: 1.5rem;
@@ -49,11 +54,30 @@ const Image = styled.img`
 
 {/* TO DO: 1) Change button's styling when clicked; 2) Increment cart number */}
 
-const CartButton = props => (
-  <Button clicked={props.clicked} onClick={props.addToCart}>
-    <Image src="http://westbuy.org/83ae4d43b337609ef65721484d59e50e.svg"></Image>
-    Add to Cart
-  </Button>
-);
+const CartButton = props => {
+
+  {/* SOLD OUT BUTTON
+    if(INVENTORY === 0) {
+      return (
+      <ClickedButton>Sold Out</ClickedButton>
+    );
+  }
+  */}
+
+  if (props.clicked) {
+    return (
+      <Button clicked={props.clicked} onClick={props.addToCart}>
+        <Image src="http://westbuy.org/83ae4d43b337609ef65721484d59e50e.svg"></Image>
+        Add to Wagon
+      </Button>
+    );
+  } else {
+    return (
+      <ClickedButton clicked={props.clicked} onClick={props.addToCart}>
+        Added to Wagon
+      </ClickedButton>
+    );
+  }
+};
 
 export default CartButton;
