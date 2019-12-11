@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Button = styled.button`
-  background: rgb(255, 215, 0);
-  color: rgb(4, 12, 19);
+const ClickedButton = styled.button`
+  background: rgb(197, 203, 213);
+  color: rgb(85, 85, 90);
   box-sizing: border-box;
   display: inline-block;
   border: none;
@@ -23,6 +23,12 @@ const Button = styled.button`
   -webkit-appearance: none;
   -moz-appearance: none;
 
+`;
+
+const Button = styled(ClickedButton)`
+  background: rgb(255, 215, 0);
+  color: rgb(4, 12, 19);
+
   ${Button}:hover,
   ${Button}:focus {
     background: rgb(255, 242, 0);
@@ -36,11 +42,6 @@ const Button = styled.button`
   ${Button}:active {
     transform: scale(0.99);
   }
-`;
-
-const ClickedButton = styled(Button)`
-  background: rgb(197, 203, 213);
-  color: rgb(85, 85, 90);
 `;
 
 const Image = styled.img`
