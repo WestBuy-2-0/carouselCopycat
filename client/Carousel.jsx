@@ -49,7 +49,7 @@ class Carousel extends React.Component{
       position: 0,
       sliding: false,
       direction: 'next',
-      yellowButton: true
+      clicked: true
     };
     this.getOrder = this.getOrder.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
@@ -106,8 +106,10 @@ class Carousel extends React.Component{
 
   addToCart() {
     this.setState({
-      yellowButton: !this.state.yellowButton
+      clicked: !this.state.clicked
     });
+    console.log("I'm clicked!");
+    console.log(this.state.clicked);
   };
 
   render() {
@@ -128,13 +130,12 @@ class Carousel extends React.Component{
               {children.map((child, index) => (
                 <CarouselSlot key={index} order={this.getOrder(index)}>
                   {child}
-                  <CartButton addToCart={this.addToCart} onClick/>
+                  <CartButton clicked={this.state.clicked} addToCart={this.addToCart} />
                 </CarouselSlot>
               ))}
             </CarouselContainer>
           <RightArrow nextSlide={this.nextSlide}></RightArrow>
         </Wrapper>
-
       </div>
     );
   };

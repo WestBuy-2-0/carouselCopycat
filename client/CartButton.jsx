@@ -2,10 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
-  background: ${props => props.yellowButton ? "rgb(255, 215, 0)" : "rgb(197, 203, 213)"};
-
-  color: ${props => props.yellowButton ? "rgb(4, 12, 19)" : "rgb(85, 85, 90)"};
-
+  background: ${props => props.clicked ? "rgb(255, 215, 0)" : "rgb(197, 203, 213)"};
+  color: ${props => props.clicked ? "rgb(4, 12, 19)" : "rgb(85, 85, 90)"};
   box-sizing: border-box;
   display: inline-block;
   border: none;
@@ -48,12 +46,11 @@ const Image = styled.img`
   object-fit: scale-down;
   filter: invert(85%);
 `;
-// <img src="http://westbuy.org/83ae4d43b337609ef65721484d59e50e.svg"></img>
 
 {/* TO DO: 1) Change button's styling when clicked; 2) Increment cart number */}
 
 const CartButton = props => (
-  <Button onClick={props.addToCart}>
+  <Button clicked={props.clicked} onClick={props.addToCart}>
     <Image src="http://westbuy.org/83ae4d43b337609ef65721484d59e50e.svg"></Image>
     Add to Cart
   </Button>
