@@ -36,7 +36,7 @@ const ProductItem = props => (
   <React.Fragment>
     <Image src={props.productItem.image}></Image>
     <Name>{props.productItem.name}</Name>
-    <div>STARS PLACEHOLDER</div>
+    <div id="star-placeholder">STAR PLACEHOLDER</div>
     <Price>{props.productItem.price}</Price>
   </React.Fragment>
 );

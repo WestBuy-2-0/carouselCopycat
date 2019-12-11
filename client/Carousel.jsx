@@ -8,6 +8,7 @@ import Wrapper from './Wrapper.jsx';
 import LeftArrow from './LeftArrow.jsx';
 import RightArrow from './RightArrow.jsx';
 import CartButton from './CartButton.jsx';
+import Container from './Container.jsx';
 
 // TO DO:  Add all styled components to a HelperComponents.jsx file
 const Title = styled.h2`
@@ -127,6 +128,21 @@ class Carousel extends React.Component{
             </CarouselContainer>
           <RightArrow nextSlide={this.nextSlide}></RightArrow>
         </Wrapper>
+        {/* <Container>
+          <Border></Border>
+          <LeftArrow prevSlide={this.prevSlide}></LeftArrow>
+          <Wrapper>
+            <CarouselContainer sliding={sliding} direction={direction}>
+              {children.map((child, index) => (
+                <CarouselSlot key={index} order={this.getOrder(index)}>
+                  {child}
+                  <CartButton />
+                </CarouselSlot>
+              ))}
+            </CarouselContainer>
+          </Wrapper>
+          <RightArrow nextSlide={this.nextSlide}></RightArrow>
+        </Container>*/}
       </div>
     );
   };

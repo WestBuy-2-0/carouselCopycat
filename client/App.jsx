@@ -26,6 +26,8 @@ class App extends React.Component {
     let productItem = this.state.items.map(product => <ProductItem key={product.id}
     productItem={product} />);
 
+    // <div id = ${productId}-star-placeholder></div>
+
     return (
       <Carousel title="People also bought">
         {productItem}
