@@ -40,6 +40,7 @@ const Border = styled.div`
   border-style: solid;
   border-width: 0 0 1px;
   margin: 0 0 20px 0;
+  grid-area: b;
 `;
 
 class Carousel extends React.Component{
@@ -114,6 +115,8 @@ class Carousel extends React.Component{
         {/* TO DO: Make HeaderPageTracker dynamic based on number of items retrieved. */}
         <HeaderPageTracker>Page <b>1</b> of <b>2</b></HeaderPageTracker>
 
+
+
         <Wrapper>
           <Border></Border>
           <LeftArrow prevSlide={this.prevSlide}></LeftArrow>
@@ -127,6 +130,8 @@ class Carousel extends React.Component{
             </CarouselContainer>
           <RightArrow nextSlide={this.nextSlide}></RightArrow>
         </Wrapper>
+
+
       </div>
     );
   };

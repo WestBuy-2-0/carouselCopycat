@@ -8,7 +8,9 @@ const Wrapper = styled.div`
   overflow: hidden;
   display: grid;
   grid-template-columns: 5% 90% 5%;
-  grid-template-areas: "l c r";
+  grid-template-areas:
+  "b b b"
+  "l c r";
 `;
 
 export default Wrapper;
