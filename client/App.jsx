@@ -72,9 +72,6 @@ class App extends React.Component {
         <Carousel title="Most-viewed products">
           {mostViewedItem}
         </Carousel>
-        <label htmlFor="test">Test Data Retrieval: </label>
-        <input type="text" />
-        <button type="submit">Get products</button>
       </div>
     );
   };
