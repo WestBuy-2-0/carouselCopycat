@@ -34,7 +34,7 @@ const Price = styled.p`
 const MostViewedItem = props => (
   <React.Fragment>
     <Image src={props.mostViewedItem.image}></Image>
-    <Name>{props.mostViewedItem.name}</Name>
+    <Name><a href={`/${props.mostViewedItem.id}`}>{props.mostViewedItem.name}</a></Name>
     <div id="star-placeholder">STAR PLACEHOLDER</div>
     <Price>{props.mostViewedItem.price}</Price>
   </React.Fragment>

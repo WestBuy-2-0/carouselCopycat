@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   grid-template-areas:
   "b b b"
   "l c r";
+  padding: 0 0 2rem 0;
 `;
 
 export default Wrapper;
