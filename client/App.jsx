@@ -17,9 +17,22 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      items: ProductData
+      items: ProductData,
+      products: []
     };
+    // this.handleSearch = this.handleSearch.bind(this);
   };
+
+  // handleSearch(id) {
+  //   let productId = this.state.items.id;
+  //   this.setState({
+  //     if (id === productId) {
+  //       return {
+  //         products:
+  //       }
+  //     }
+  //   });
+  // };
 
   render() {
 
@@ -29,9 +42,14 @@ class App extends React.Component {
     // <div id = ${productId}-star-placeholder></div>
 
     return (
-      <Carousel title="People also bought">
-        {productItem}
-      </Carousel>
+      <div>
+        <Carousel title="People also bought">
+          {productItem}
+        </Carousel>
+        <label htmlFor="test">Test Data Retrieval: </label>
+        <input type="text" />
+        <button type="submit" onClick={this.handleSearch}>Get products</button>
+      </div>
     );
   };
 };

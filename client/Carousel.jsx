@@ -115,8 +115,6 @@ class Carousel extends React.Component{
         {/* TO DO: Make HeaderPageTracker dynamic based on number of items retrieved. */}
         <HeaderPageTracker>Page <b>1</b> of <b>2</b></HeaderPageTracker>
 
-
-
         <Wrapper>
           <Border></Border>
           <LeftArrow prevSlide={this.prevSlide}></LeftArrow>
@@ -130,8 +128,6 @@ class Carousel extends React.Component{
             </CarouselContainer>
           <RightArrow nextSlide={this.nextSlide}></RightArrow>
         </Wrapper>
-
-
       </div>
     );
   };
