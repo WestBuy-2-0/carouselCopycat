@@ -21,4 +21,14 @@ connection.connect();
 //   });
 // };
 
-module.exports = connection;
+const retrieveRandomProducts = callback => {
+  connection.query('SELECT name, price, image FROM products ORDER BY RAND() LIMIT 10', (error, results) => {
+    if (error) {
+      callback(error, null);
+    } else {
+      callback(null, results);
+    }
+  });
+};
+
+module.exports = {connection, retrieveRandomProducts};

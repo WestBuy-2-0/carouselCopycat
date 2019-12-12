@@ -1,7 +1,7 @@
 const path = require('path');
 const SRC_DIR = path.join(__dirname, '/client');
 const DIST_DIR = path.join(__dirname, '/dist');
-module.exports = {
+const config = {
   entry: `${SRC_DIR}/index.jsx`,
   output: {
   filename: 'bundle.js',
@@ -20,3 +20,7 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   }
 };
+if (process.env.NODE_ENV === 'production'){
+  config['mode'] = 'production';
+}
+module.exports = config;

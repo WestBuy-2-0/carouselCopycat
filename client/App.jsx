@@ -1,6 +1,7 @@
 // Base carousel structure
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 import Carousel from './Carousel.jsx';
 import ProductItem from './ProductItem.jsx';
@@ -17,22 +18,26 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      items: ProductData,
-      products: []
+      items: []
     };
-    // this.handleSearch = this.handleSearch.bind(this);
+    this.getProducts = this.getProducts.bind(this);
   };
 
-  // handleSearch(id) {
-  //   let productId = this.state.items.id;
-  //   this.setState({
-  //     if (id === productId) {
-  //       return {
-  //         products:
-  //       }
-  //     }
-  //   });
-  // };
+  componentDidMount() {
+    this.getProducts();
+  };
+
+  getProducts() {
+    axios.get('/products')
+    .then(response => {
+      this.setState({
+        items: response.data
+      })
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  };
 
   render() {
 
@@ -48,7 +53,7 @@ class App extends React.Component {
         </Carousel>
         <label htmlFor="test">Test Data Retrieval: </label>
         <input type="text" />
-        <button type="submit" onClick={this.handleSearch}>Get products</button>
+        <button type="submit">Get products</button>
       </div>
     );
   };

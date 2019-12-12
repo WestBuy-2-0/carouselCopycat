@@ -31,7 +31,6 @@ const Price = styled.p`
   height: 35px;
 `;
 
-
 const ProductItem = props => (
   <React.Fragment>
     <Image src={props.productItem.image}></Image>
