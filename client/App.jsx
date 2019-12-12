@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import axios from 'axios';
 
 import Carousel from './Carousel.jsx';
-import ProductItem from './ProductItem.jsx';
-import ProductData from './ProductData.jsx';
+import AlsoBoughtItem from './ProductItem.jsx';
+import MostViewedItem from './MostViewedItem.jsx';
 
 const Item = styled.div`
   background: blue;
@@ -18,20 +18,35 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      items: []
+      alsoBoughtItems: [],
+      mostViewedItems: []
     };
-    this.getProducts = this.getProducts.bind(this);
+    this.getAlsoBoughtProducts = this.getAlsoBoughtProducts.bind(this);
+    this.getMostViewedProducts = this.getMostViewedProducts.bind(this);
   };
 
   componentDidMount() {
-    this.getProducts();
+    this.getAlsoBoughtProducts();
+    this.getMostViewedProducts();
   };
 
-  getProducts() {
+  getAlsoBoughtProducts() {
     axios.get('/products')
     .then(response => {
       this.setState({
-        items: response.data
+        alsoBoughtItems: response.data
+      })
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  };
+
+  getMostViewedProducts() {
+    axios.get('/products')
+    .then(response => {
+      this.setState({
+        mostViewedItems: response.data
       })
     })
     .catch(error => {
@@ -41,15 +56,21 @@ class App extends React.Component {
 
   render() {
 
-    let productItem = this.state.items.map(product => <ProductItem key={product.id}
-    productItem={product} />);
+    let alsoBoughtItem = this.state.alsoBoughtItems.map(product => <AlsoBoughtItem key={product.id}
+    alsoBoughtItem={product} />);
+
+    let mostViewedItem = this.state.mostViewedItems.map(product => <MostViewedItem key={product.id}
+    mostViewedItem={product} />);
 
     // <div id = ${productId}-star-placeholder></div>
 
     return (
       <div>
         <Carousel title="People also bought">
-          {productItem}
+          {alsoBoughtItem}
+        </Carousel>
+        <Carousel title="Most-viewed products">
+          {mostViewedItem}
         </Carousel>
         <label htmlFor="test">Test Data Retrieval: </label>
         <input type="text" />
