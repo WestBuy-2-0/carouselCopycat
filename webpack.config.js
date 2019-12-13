@@ -4,7 +4,7 @@ const DIST_DIR = path.join(__dirname, '/dist');
 const config = {
   entry: `${SRC_DIR}/index.jsx`,
   output: {
-  filename: 'bundle.js',
+  filename: 'carousel-bundle.js',
   path: DIST_DIR
 },
   module : {

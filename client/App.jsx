@@ -31,7 +31,7 @@ class App extends React.Component {
   };
 
   getAlsoBoughtProducts() {
-    axios.get('/products')
+    axios.get('http://westbuycarousel-env.8mbhtr3m3h.us-east-2.elasticbeanstalk.com/products')
     .then(response => {
       this.setState({
         alsoBoughtItems: response.data
@@ -43,7 +43,7 @@ class App extends React.Component {
   };
 
   getMostViewedProducts() {
-    axios.get('/products')
+    axios.get('http://westbuycarousel-env.8mbhtr3m3h.us-east-2.elasticbeanstalk.com/products')
     .then(response => {
       this.setState({
         mostViewedItems: response.data

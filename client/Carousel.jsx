@@ -112,7 +112,8 @@ class Carousel extends React.Component{
     this.setState({
       leftClicked: !this.state.leftClicked
     });
-  }
+    console.log(this.state.leftClicked);
+  };
 
   render() {
     const {title, children} = this.props;
@@ -128,7 +129,6 @@ class Carousel extends React.Component{
         </Counter>
 
         <Wrapper>
-
           <Border></Border>
 
           <LeftArrow
@@ -143,7 +143,7 @@ class Carousel extends React.Component{
                   {child}
                   <CartButton />
                 </CarouselSlot>
-              ))}
+              ))};
             </CarouselContainer>
 
           <RightArrow
@@ -151,7 +151,6 @@ class Carousel extends React.Component{
             leftClicked={this.state.leftClicked}
             rightArrowClick={this.rightArrowClick}>
           </RightArrow>
-          
         </Wrapper>
       </div>
     );

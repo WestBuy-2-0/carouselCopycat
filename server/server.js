@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const {connection, retrieveRandomProducts} = require('./db.js');
 const port = process.env.PORT || 3000;
 
+app.use(cors());
 app.use(express.json());
 app.use(express.static('dist'));
 app.use(express.urlencoded({extended: true}));
@@ -18,7 +20,7 @@ app.use(express.urlencoded({extended: true}));
 //   });
 // });
 
-app.get('/products', (req, res) => {
+app.get('http://westbuycarousel-env.8mbhtr3m3h.us-east-2.elasticbeanstalk.com/products', (req, res) => {
   retrieveRandomProducts((error, results) => {
     if (error) {
       res.status(404).send('Database not found.');

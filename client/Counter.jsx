@@ -13,12 +13,21 @@ const PageTracker = styled.div`
   width: 16.67%;
 `;
 
+// Works successfully with right arrow
 const Counter = (props) => {
   if (!props.rightClicked) {
     return (<PageTracker>Page <b>1</b> of <b>2</b></PageTracker>);
   } else {
     return (<PageTracker>Page <b>2</b> of <b>2</b></PageTracker>)
   }
+
+  if (props.leftClicked) {
+    return (<PageTracker>Page <b>1</b> of <b>2</b></PageTracker>);
+  } else {
+    console.log("TEST");
+  }
 };
+
+
 
 export default Counter;
