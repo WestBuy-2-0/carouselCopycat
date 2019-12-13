@@ -8,9 +8,7 @@ import Wrapper from './Wrapper.jsx';
 import LeftArrow from './LeftArrow.jsx';
 import RightArrow from './RightArrow.jsx';
 import CartButton from './CartButton.jsx';
-
-import TestArrow from './TestArrow.jsx';
-import TestLeftArrow from './TestLeftArrow.jsx';
+import Counter from './Counter.jsx';
 
 // TO DO:  Add all styled components to a HelperComponents.jsx file
 const Title = styled.h2`
@@ -24,18 +22,6 @@ const Title = styled.h2`
   min-height: 54px;
   padding: 15px 0;
   width: 83.33%;
-`;
-
-const HeaderPageTracker = styled.div`
-  box-sizing: border-box;
-  color: rgb(4, 12, 19);
-  float: right;
-  font-family: Human BBY Web, Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  line-height: normal;
-  margin: 24px 0 0 0;
-  text-align: right;
-  width: 16.67%;
 `;
 
 const Border = styled.div`
@@ -53,18 +39,21 @@ class Carousel extends React.Component{
       position: 0,
       sliding: false,
       direction: 'next',
-      clicked: false
+      rightClicked: false,
+      leftClicked: false
     };
 
     this.getOrder = this.getOrder.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
     this.prevSlide = this.prevSlide.bind(this);
     this.doSliding = this.doSliding.bind(this);
-    this.testArrowClick = this.testArrowClick.bind(this);
+    this.rightArrowClick = this.rightArrowClick.bind(this);
+    this.leftArrowClick = this.leftArrowClick.bind(this);
   };
 
   componentDidMount() {
-    this.state.clicked;
+    this.state.rightClicked;
+    this.state.leftClicked;
   };
 
   /* Takes the DOM index of an item (its initial position on the page) and returns
@@ -113,12 +102,17 @@ class Carousel extends React.Component{
     this.doSliding('prev', position === 0 ? numItems - 1 : position - 5);
   };
 
-  testArrowClick() {
+  rightArrowClick() {
     this.setState({
-      clicked: !this.state.clicked
+      rightClicked: !this.state.rightClicked
     });
-    console.log("I'm clicked!");
   };
+
+  leftArrowClick() {
+    this.setState({
+      leftClicked: !this.state.leftClicked
+    });
+  }
 
   render() {
     const {title, children} = this.props;
@@ -128,11 +122,21 @@ class Carousel extends React.Component{
       <div>
         <Title>{title}</Title>
 
-        <HeaderPageTracker>Page <b>1</b> of <b>2</b></HeaderPageTracker>
+        <Counter
+          rightClicked={this.state.rightClicked}
+          leftCicked={this.state.leftClicked}>
+        </Counter>
 
         <Wrapper>
+
           <Border></Border>
-          <LeftArrow prevSlide={this.prevSlide} clicked={this.state.clicked}></LeftArrow>
+
+          <LeftArrow
+            prevSlide={this.prevSlide}
+            rightClicked={this.state.rightClicked}
+            leftArrowClick={this.leftArrowClick}>
+          </LeftArrow>
+
             <CarouselContainer sliding={sliding} direction={direction}>
               {children.map((child, index) => (
                 <CarouselSlot key={index} order={this.getOrder(index)}>
@@ -141,7 +145,13 @@ class Carousel extends React.Component{
                 </CarouselSlot>
               ))}
             </CarouselContainer>
-          <RightArrow nextSlide={this.nextSlide} testArrowClick={this.testArrowClick}></RightArrow>
+
+          <RightArrow
+            nextSlide={this.nextSlide}
+            leftClicked={this.state.leftClicked}
+            rightArrowClick={this.rightArrowClick}>
+          </RightArrow>
+          
         </Wrapper>
       </div>
     );

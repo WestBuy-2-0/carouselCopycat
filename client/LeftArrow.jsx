@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faChevronLeft} from '@fortawesome/free-solid-svg-icons';
 
 import Arrows from './Arrows.jsx';
-import TestLeftArrow from './TestLeftArrow.jsx';
+import GrayArrows from './GrayArrows.jsx';
 
 const LeftArrowContainer = styled.div`
   grid-area: l;
@@ -15,10 +15,10 @@ const LeftArrowContainer = styled.div`
 `;
 
 const LeftArrow = (props) => {
-  if (props.clicked) {
+  if (props.rightClicked) {
     return (
       <LeftArrowContainer>
-        <Arrows onClick={props.prevSlide}>
+        <Arrows onClick={() => {props.prevSlide(); props.leftArrowClick()}}>
           <FontAwesomeIcon icon={faChevronLeft} />
         </Arrows>
       </LeftArrowContainer>
@@ -26,13 +26,12 @@ const LeftArrow = (props) => {
   } else {
     return (
       <LeftArrowContainer>
-        <TestLeftArrow onClick={props.prevSlide}>
+        <GrayArrows onClick={props.prevSlide}>
           <FontAwesomeIcon icon={faChevronLeft} />
-        </TestLeftArrow>
+        </GrayArrows>
       </LeftArrowContainer>
-    )
-  }
-
+    );
+  };
 };
 
 export default LeftArrow;
