@@ -9,6 +9,9 @@ import LeftArrow from './LeftArrow.jsx';
 import RightArrow from './RightArrow.jsx';
 import CartButton from './CartButton.jsx';
 
+import TestArrow from './TestArrow.jsx';
+import TestLeftArrow from './TestLeftArrow.jsx';
+
 // TO DO:  Add all styled components to a HelperComponents.jsx file
 const Title = styled.h2`
   box-sizing: border-box;
@@ -49,13 +52,19 @@ class Carousel extends React.Component{
     this.state = {
       position: 0,
       sliding: false,
-      direction: 'next'
+      direction: 'next',
+      clicked: false
     };
 
     this.getOrder = this.getOrder.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
     this.prevSlide = this.prevSlide.bind(this);
     this.doSliding = this.doSliding.bind(this);
+    this.testArrowClick = this.testArrowClick.bind(this);
+  };
+
+  componentDidMount() {
+    this.state.clicked;
   };
 
   /* Takes the DOM index of an item (its initial position on the page) and returns
@@ -92,7 +101,7 @@ class Carousel extends React.Component{
     const {children} = this.props;
     const numItems = children.length || 1;
 
-    this.doSliding('next', position === numItems - 1 ? 0 : position + 1);
+    this.doSliding('next', position === numItems - 1 ? 0 : position + 5);
   };
 
   // Go to the previous slide.
@@ -101,7 +110,14 @@ class Carousel extends React.Component{
     const {children} = this.props;
     const numItems = children.length;
 
-    this.doSliding('prev', position === 0 ? numItems - 1 : position - 1);
+    this.doSliding('prev', position === 0 ? numItems - 1 : position - 5);
+  };
+
+  testArrowClick() {
+    this.setState({
+      clicked: !this.state.clicked
+    });
+    console.log("I'm clicked!");
   };
 
   render() {
@@ -112,12 +128,11 @@ class Carousel extends React.Component{
       <div>
         <Title>{title}</Title>
 
-        {/* TO DO: Make HeaderPageTracker dynamic based on number of items retrieved. */}
         <HeaderPageTracker>Page <b>1</b> of <b>2</b></HeaderPageTracker>
 
         <Wrapper>
           <Border></Border>
-          <LeftArrow prevSlide={this.prevSlide}></LeftArrow>
+          <LeftArrow prevSlide={this.prevSlide} clicked={this.state.clicked}></LeftArrow>
             <CarouselContainer sliding={sliding} direction={direction}>
               {children.map((child, index) => (
                 <CarouselSlot key={index} order={this.getOrder(index)}>
@@ -126,7 +141,7 @@ class Carousel extends React.Component{
                 </CarouselSlot>
               ))}
             </CarouselContainer>
-          <RightArrow nextSlide={this.nextSlide}></RightArrow>
+          <RightArrow nextSlide={this.nextSlide} testArrowClick={this.testArrowClick}></RightArrow>
         </Wrapper>
       </div>
     );

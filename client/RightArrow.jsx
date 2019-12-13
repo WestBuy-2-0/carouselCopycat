@@ -15,7 +15,7 @@ const RightArrowContainer = styled.div`
 
 const RightArrow = (props) => (
   <RightArrowContainer>
-    <Arrows onClick={props.nextSlide}>
+    <Arrows onClick={() => {props.nextSlide(); props.testArrowClick();}}>
       <FontAwesomeIcon icon={faChevronRight} />
     </Arrows>
   </RightArrowContainer>
