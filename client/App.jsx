@@ -39,7 +39,6 @@ class App extends React.Component {
       this.setState({
         alsoBoughtItems: response.data
       })
-      console.log(this.state.alsoBoughtItems);
     })
     .catch(error => {
       console.log(error);
@@ -88,7 +87,6 @@ class App extends React.Component {
           handleCurrentPage={this.handleCurrentPage}
           currentPage={this.state.currentPage}
           totalPages={this.state.totalPages}
-          // stock={this.alsoBoughtItems.stock}
         >
           {alsoBoughtItem}
         </Carousel>

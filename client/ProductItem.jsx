@@ -14,11 +14,17 @@ const Image = styled.img`
 
 const Name = styled.p`
   box-sizing: border-box;
-  color: rgb(0, 30, 115);
+  width: 80%;
+  color: blue;
   font-family: Human BBY Web, Arial, Helvetica, sans-serif;
   font-size: 13px;
   max-height: 48px;
   height: 35px;
+
+  ${Name}:hover {
+    color: hot pink;
+    text-decoration: default;
+  }
 `;
 
 const Price = styled.p`
@@ -32,13 +38,35 @@ const Price = styled.p`
   height: 35px;
 `;
 
+const Clickable = styled.span`
+  text-decoration: none;
+  color: blue;
+
+  ${Clickable}:hover,
+  ${Clickable}:focus {
+    color: rgb(255, 242, 0);
+    text-decoration: default;
+  }
+`;
+
 const AlsoBoughtItem = props => {
+
+  let starsId = '' + props.alsoBoughtItem.id;
+
+  console.log(props.alsoBoughtItem.id);
+
   if (props.alsoBoughtItem.stock === 0) {
     return (
       <React.Fragment>
-        <Image src={props.alsoBoughtItem.image}></Image>
-        <Name><a href={`/${props.alsoBoughtItem.id}`}>{props.alsoBoughtItem.name}</a></Name>
-        <div id="star-placeholder">STAR PLACEHOLDER</div>
+        <a href={`/${props.alsoBoughtItem.id}`}>
+          <Image src={props.alsoBoughtItem.image}></Image>
+        </a>
+        <Name>
+          <Clickable><a href={`/${props.alsoBoughtItem.id}`}>
+            {props.alsoBoughtItem.name}
+          </a></Clickable>
+        </Name>
+        <div className="stars-carousel" id={starsId}>STAR PLACEHOLDER</div>
         <Price>{props.alsoBoughtItem.price}</Price>
         <ClickedButton>Sold Out</ClickedButton>
       </React.Fragment>
@@ -46,9 +74,15 @@ const AlsoBoughtItem = props => {
   } else {
     return (
       <React.Fragment>
-        <Image src={props.alsoBoughtItem.image}></Image>
-        <Name style={{width: "80%"}}><a href={`/${props.alsoBoughtItem.id}`}>{props.alsoBoughtItem.name}</a></Name>
-        <div id="star-placeholder">STAR PLACEHOLDER</div>
+        <a href={`/${props.alsoBoughtItem.id}`}>
+          <Image src={props.alsoBoughtItem.image}></Image>
+        </a>
+        <Name>
+          <Clickable><a href={`/${props.alsoBoughtItem.id}`}>
+            {props.alsoBoughtItem.name}
+          </a></Clickable>
+        </Name>
+        <div className="stars-carousel" id={starsId}>STAR PLACEHOLDER</div>
         <Price>{props.alsoBoughtItem.price}</Price>
         <CartButton></CartButton>
       </React.Fragment>
@@ -57,3 +91,12 @@ const AlsoBoughtItem = props => {
 };
 
 export default AlsoBoughtItem;
+
+// <a
+//   href={`/${props.alsoBoughtItem.id}`}
+//   style={{
+//     "text-decoration": "none",
+//     "color": "blue"
+//
+//   }}
+// >
