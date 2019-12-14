@@ -61,7 +61,7 @@ class CartButton extends React.Component {
       );
     } else {
       return (
-        <ClickedButton clicked={this.state.clicked} onClick={this.addToCart} >
+        <ClickedButton>
           Added to Wagon
         </ClickedButton>
       );
