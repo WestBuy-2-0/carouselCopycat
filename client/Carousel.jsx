@@ -38,23 +38,23 @@ class Carousel extends React.Component{
     this.state = {
       position: 0,
       sliding: false,
-      direction: 'next',
-      rightClicked: false,
-      leftClicked: false
+      direction: 'next'
+      // rightClicked: false,
+      // leftClicked: false
     };
 
     this.getOrder = this.getOrder.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
     this.prevSlide = this.prevSlide.bind(this);
     this.doSliding = this.doSliding.bind(this);
-    this.rightArrowClick = this.rightArrowClick.bind(this);
-    this.leftArrowClick = this.leftArrowClick.bind(this);
+    // this.rightArrowClick = this.rightArrowClick.bind(this);
+    // this.leftArrowClick = this.leftArrowClick.bind(this);
   };
 
-  componentDidMount() {
-    this.state.rightClicked;
-    this.state.leftClicked;
-  };
+  // componentDidMount() {
+  //   this.state.rightClicked;
+  //   this.state.leftClicked;
+  // };
 
   /* Takes the DOM index of an item (its initial position on the page) and returns
   the place it should appear in. */
@@ -102,18 +102,18 @@ class Carousel extends React.Component{
     this.doSliding('prev', position === 0 ? numItems - 1 : position - 5);
   };
 
-  rightArrowClick() {
-    this.setState({
-      rightClicked: !this.state.rightClicked
-    });
-  };
+  // rightArrowClick() {
+  //   this.setState({
+  //     rightClicked: !this.state.rightClicked
+  //   });
+  // };
 
-  leftArrowClick() {
-    this.setState({
-      leftClicked: !this.state.leftClicked
-    });
-    console.log(this.state.leftClicked);
-  };
+  // leftArrowClick() {
+  //   this.setState({
+  //     leftClicked: !this.state.leftClicked
+  //   });
+  //   console.log(this.state.leftClicked);
+  // };
 
   render() {
     const {title, children} = this.props;
@@ -124,11 +124,9 @@ class Carousel extends React.Component{
         <Title>{title}</Title>
 
         <Counter
-          rightClicked={this.state.rightClicked}
-          leftCicked={this.state.leftClicked}
           currentPage={this.props.currentPage}
           totalPages={this.props.totalPages}
-          >
+        >
         </Counter>
 
         <Wrapper>
@@ -136,12 +134,10 @@ class Carousel extends React.Component{
 
           <LeftArrow
             prevSlide={this.prevSlide}
-            rightClicked={this.state.rightClicked}
-            leftArrowClick={this.leftArrowClick}
-
             handleCurrentPage={this.props.handleCurrentPage}
             currentPage={this.props.currentPage}
-            totalPages={this.props.totalPages}>
+            totalPages={this.props.totalPages}
+          >
           </LeftArrow>
 
             <CarouselContainer sliding={sliding} direction={direction}>
@@ -155,14 +151,10 @@ class Carousel extends React.Component{
 
           <RightArrow
             nextSlide={this.nextSlide}
-            leftClicked={this.state.leftClicked}
-            rightArrowClick={this.rightArrowClick}
-
             handleCurrentPage={this.props.handleCurrentPage}
             currentPage={this.props.currentPage}
             totalPages={this.props.totalPages}
-
-            >
+          >
           </RightArrow>
         </Wrapper>
       </div>

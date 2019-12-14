@@ -15,40 +15,26 @@ const LeftArrowContainer = styled.div`
 `;
 
 const LeftArrow = (props) => {
+  if (props.currentPage === 1) {
+    return (
+      <LeftArrowContainer>
+        <GrayArrows>
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </GrayArrows>
+      </LeftArrowContainer>
+    );
+  } else {
     return (
       <LeftArrowContainer>
         <Arrows onClick={() => {
-            if (props.currentPage !== 1) {
-              props.prevSlide();
-              props.handleCurrentPage("left");
-            } else {
-              console.log("Testing!");
-            }
+          props.prevSlide();
+          props.handleCurrentPage("left");
         }}>
           <FontAwesomeIcon icon={faChevronLeft} />
         </Arrows>
       </LeftArrowContainer>
     );
+  }
 };
-
-// const LeftArrow = (props) => {
-//   if (props.rightClicked) {
-//     return (
-//       <LeftArrowContainer>
-//         <Arrows onClick={() => {props.prevSlide(); props.leftArrowClick()}}>
-//           <FontAwesomeIcon icon={faChevronLeft} />
-//         </Arrows>
-//       </LeftArrowContainer>
-//     );
-//   } else {
-//     return (
-//       <LeftArrowContainer>
-//         <GrayArrows onClick={props.prevSlide}>
-//           <FontAwesomeIcon icon={faChevronLeft} />
-//         </GrayArrows>
-//       </LeftArrowContainer>
-//     );
-//   };
-// };
 
 export default LeftArrow;

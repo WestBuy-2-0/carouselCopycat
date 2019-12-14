@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faChevronRight} from '@fortawesome/free-solid-svg-icons';
 
 import Arrows from './Arrows.jsx';
-import GrayArrows from './Arrows.jsx';
+import GrayArrows from './GrayArrows.jsx';
 
 const RightArrowContainer = styled.div`
   grid-area: r;
@@ -15,18 +15,27 @@ const RightArrowContainer = styled.div`
 `;
 
 const RightArrow = (props) => {
+  if (props.currentPage === 1) {
     return (
       <RightArrowContainer>
         <Arrows onClick={() => {
-          if (props.currentPage === 1) {
-            props.nextSlide();
-            props.handleCurrentPage("right");
-          }
+          props.nextSlide();
+          props.handleCurrentPage("right");
         }}>
           <FontAwesomeIcon icon={faChevronRight} />
         </Arrows>
       </RightArrowContainer>
     );
+  } else {
+    console.log("Testing!");
+    return (
+      <RightArrowContainer>
+        <GrayArrows>
+          <FontAwesomeIcon icon={faChevronRight} />
+        </GrayArrows>
+      </RightArrowContainer>
+    )
+  }
 };
 
 export default RightArrow;

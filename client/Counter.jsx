@@ -17,7 +17,7 @@ const PageTracker = styled.div`
 const Counter = (props) => {
   return (
     <PageTracker>Page <b>{props.currentPage}</b> of <b>{props.totalPages}</b></PageTracker>
-  )
+  );
 };
 
 
