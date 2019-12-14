@@ -52,14 +52,6 @@ class CartButton extends React.Component {
 
   render() {
 
-    {/* SOLD OUT BUTTON
-      if(INVENTORY === 0) {
-        return (
-        <ClickedButton>Sold Out</ClickedButton>
-      );
-    }
-    */}
-
     if (this.state.clicked) {
       return (
         <Button clicked={this.state.clicked} onClick={this.addToCart}>
