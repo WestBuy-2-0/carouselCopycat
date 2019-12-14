@@ -144,7 +144,7 @@ class Carousel extends React.Component{
               {children.map((child, index) => (
                 <CarouselSlot key={index} order={this.getOrder(index)}>
                   {child}
-                  <CartButton stock={this.props.stock}/>
+                  {/* <CartButton stock={this.props.stock}/> */}
                 </CarouselSlot>
               ))};
             </CarouselContainer>

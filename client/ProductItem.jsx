@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import CartButton from './CartButton.jsx';
+import ClickedButton from './ClickedButton.jsx';
 
 const Image = styled.img`
   width: 100px;
@@ -32,12 +33,15 @@ const Price = styled.p`
 `;
 
 const AlsoBoughtItem = props => (
-  <React.Fragment>
-    <Image src={props.alsoBoughtItem.image}></Image>
-    <Name><a href={`/${props.alsoBoughtItem.id}`}>{props.alsoBoughtItem.name}</a></Name>
-    <div id="star-placeholder">STAR PLACEHOLDER</div>
-    <Price>{props.alsoBoughtItem.price}</Price>
-  </React.Fragment>
+
+
+      <React.Fragment>
+        <Image src={props.alsoBoughtItem.image}></Image>
+        <Name><a href={`/${props.alsoBoughtItem.id}`}>{props.alsoBoughtItem.name}</a></Name>
+        <div id="star-placeholder">STAR PLACEHOLDER</div>
+        <Price>{props.alsoBoughtItem.price}</Price>
+        <ClickedButton>Sold Out</ClickedButton>
+      </React.Fragment>
 );
 
 export default AlsoBoughtItem;
