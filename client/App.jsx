@@ -86,11 +86,16 @@ class App extends React.Component {
           title="People also bought"
           handleCurrentPage={this.handleCurrentPage}
           currentPage={this.state.currentPage}
-          totalPages={}
+          totalPages={this.state.totalPages}
         >
           {alsoBoughtItem}
         </Carousel>
-        <Carousel title="Most-viewed products">
+        <Carousel
+          title="Most-viewed products"
+          handleCurrenPage={this.handleCurrentPage}
+          currentPage={this.state.currentPage}
+          totalPages={this.state.totalPages}
+        >
           {mostViewedItem}
         </Carousel>
       </div>
