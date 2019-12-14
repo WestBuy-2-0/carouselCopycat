@@ -17,11 +17,18 @@ const RightArrowContainer = styled.div`
 const RightArrow = (props) => {
     return (
       <RightArrowContainer>
-        <Arrows onClick={() => {props.nextSlide(); props.rightArrowClick();}}>
+        <Arrows onClick={() => {
+          if (props.currentPage === 1) {
+            props.nextSlide();
+            props.handleCurrentPage("right");
+          }
+        }}>
           <FontAwesomeIcon icon={faChevronRight} />
         </Arrows>
       </RightArrowContainer>
-    );  
+    );
 };
 
 export default RightArrow;
+
+// <Arrows onClick={() => {props.nextSlide(); props.rightArrowClick();}}>

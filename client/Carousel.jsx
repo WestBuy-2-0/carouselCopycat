@@ -125,7 +125,10 @@ class Carousel extends React.Component{
 
         <Counter
           rightClicked={this.state.rightClicked}
-          leftCicked={this.state.leftClicked}>
+          leftCicked={this.state.leftClicked}
+          currentPage={this.props.currentPage}
+          totalPages={this.props.totalPages}
+          >
         </Counter>
 
         <Wrapper>
@@ -134,7 +137,11 @@ class Carousel extends React.Component{
           <LeftArrow
             prevSlide={this.prevSlide}
             rightClicked={this.state.rightClicked}
-            leftArrowClick={this.leftArrowClick}>
+            leftArrowClick={this.leftArrowClick}
+
+            handleCurrentPage={this.props.handleCurrentPage}
+            currentPage={this.props.currentPage}
+            totalPages={this.props.totalPages}>
           </LeftArrow>
 
             <CarouselContainer sliding={sliding} direction={direction}>
@@ -149,7 +156,13 @@ class Carousel extends React.Component{
           <RightArrow
             nextSlide={this.nextSlide}
             leftClicked={this.state.leftClicked}
-            rightArrowClick={this.rightArrowClick}>
+            rightArrowClick={this.rightArrowClick}
+
+            handleCurrentPage={this.props.handleCurrentPage}
+            currentPage={this.props.currentPage}
+            totalPages={this.props.totalPages}
+
+            >
           </RightArrow>
         </Wrapper>
       </div>
