@@ -5,6 +5,7 @@ const ClickedButton = styled.button`
   color: rgb(85, 85, 90);
   box-sizing: border-box;
   display: inline-block;
+  width: 80%;
   border: none;
   padding: 0 1rem;
   border-radius: 4px;

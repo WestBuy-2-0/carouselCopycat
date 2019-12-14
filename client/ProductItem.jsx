@@ -47,7 +47,7 @@ const AlsoBoughtItem = props => {
     return (
       <React.Fragment>
         <Image src={props.alsoBoughtItem.image}></Image>
-        <Name><a href={`/${props.alsoBoughtItem.id}`}>{props.alsoBoughtItem.name}</a></Name>
+        <Name style={{width: "80%"}}><a href={`/${props.alsoBoughtItem.id}`}>{props.alsoBoughtItem.name}</a></Name>
         <div id="star-placeholder">STAR PLACEHOLDER</div>
         <Price>{props.alsoBoughtItem.price}</Price>
         <CartButton></CartButton>
