@@ -53,8 +53,6 @@ const AlsoBoughtItem = props => {
 
   let starsId = props.alsoBoughtItem.id;
 
-  console.log(props.alsoBoughtItem.id);
-
   if (props.alsoBoughtItem.stock === 0) {
     return (
       <React.Fragment>
@@ -82,7 +80,7 @@ const AlsoBoughtItem = props => {
             {props.alsoBoughtItem.name}
           </a></Clickable>
         </Name>
-        <div className="stars-carousel" id={starsId}>STAR PLACEHOLDER</div>
+        <div className="stars-carousel" id={starsId}></div>
         <Price>{props.alsoBoughtItem.price}</Price>
         <CartButton></CartButton>
       </React.Fragment>
