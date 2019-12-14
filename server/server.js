@@ -24,7 +24,8 @@ app.use(express.urlencoded({extended: true}));
 app.get('/products', (req, res) => {
   retrieveRandomProducts((error, results) => {
     if (error) {
-      res.status(404).send('Database not found.');
+      // res.status(404).send('Database not found.');
+      res.send(error);
     } else {
       res.send(results);
     }
