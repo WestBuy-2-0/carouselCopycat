@@ -27,14 +27,13 @@ const RightArrow = (props) => {
       </RightArrowContainer>
     );
   } else {
-    console.log("Testing!");
     return (
       <RightArrowContainer>
         <GrayArrows>
           <FontAwesomeIcon icon={faChevronRight} />
         </GrayArrows>
       </RightArrowContainer>
-    )
+    );
   }
 };
 

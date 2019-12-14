@@ -22,7 +22,7 @@ connection.connect();
 // };
 
 const retrieveRandomProducts = callback => {
-  connection.query('SELECT name, price, image FROM products ORDER BY RAND() LIMIT 10', (error, results) => {
+  connection.query('SELECT name, price, image, stock FROM products ORDER BY RAND() LIMIT 10', (error, results) => {
     if (error) {
       callback(error, null);
     } else {

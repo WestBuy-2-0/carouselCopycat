@@ -81,6 +81,13 @@ class CartButton extends React.Component {
       );
     }
     */}
+    if (this.props.stock === 0) {
+      return (
+        <ClickedButton>
+          Sold Out
+        </ClickedButton>
+      );
+    }
 
     if (this.state.clicked) {
       return (
