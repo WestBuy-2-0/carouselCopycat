@@ -9,6 +9,7 @@ const Arrows = styled.button`
   background: none;
   color: rgb(0, 70, 190);
   font-size: 50px;
+  cursor: pointer;
 `;
 
 export default Arrows;

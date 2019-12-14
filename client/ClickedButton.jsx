@@ -15,7 +15,6 @@ const ClickedButton = styled.button`
   font-size: 1rem;
   font-weight: bold;
   height: 2.5rem;
-  cursor: pointer;
   text-align: center;
   vertical-align: middle;
   transition: background 250ms ease-in-out,

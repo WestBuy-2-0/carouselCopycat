@@ -7,6 +7,7 @@ import ClickedButton from './ClickedButton.jsx';
 const Button = styled(ClickedButton)`
   background: rgb(255, 215, 0);
   color: rgb(4, 12, 19);
+  cursor: pointer;
   font-size: 0.93rem;
 
   ${Button}:hover,
