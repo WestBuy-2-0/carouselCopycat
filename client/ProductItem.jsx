@@ -51,7 +51,7 @@ const Clickable = styled.span`
 
 const AlsoBoughtItem = props => {
 
-  let starsId = '' + props.alsoBoughtItem.id;
+  let starsId = props.alsoBoughtItem.id;
 
   console.log(props.alsoBoughtItem.id);
 
@@ -66,7 +66,7 @@ const AlsoBoughtItem = props => {
             {props.alsoBoughtItem.name}
           </a></Clickable>
         </Name>
-        <div className="stars-carousel" id={starsId}>STAR PLACEHOLDER</div>
+        <div className="stars-carousel" id={starsId}></div>
         <Price>{props.alsoBoughtItem.price}</Price>
         <ClickedButton>Sold Out</ClickedButton>
       </React.Fragment>
