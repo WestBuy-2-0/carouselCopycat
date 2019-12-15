@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 
 import Carousel from './Carousel.jsx';
-import AlsoBoughtItem from './ProductItem.jsx';
+import AlsoBoughtItem from './AlsoBoughtItem.jsx';
 import MostViewedItem from './MostViewedItem.jsx';
 
 const Item = styled.div`

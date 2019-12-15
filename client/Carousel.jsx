@@ -9,6 +9,7 @@ import LeftArrow from './LeftArrow.jsx';
 import RightArrow from './RightArrow.jsx';
 import CartButton from './CartButton.jsx';
 import Counter from './Counter.jsx';
+import Sizing from './Sizing.jsx';
 
 // TO DO:  Add all styled components to a HelperComponents.jsx file
 const Title = styled.h2`
@@ -120,7 +121,7 @@ class Carousel extends React.Component{
     const {sliding, direction, position} = this.state;
 
     return (
-      <div>
+      <Sizing>
         <Title>{title}</Title>
 
         <Counter
@@ -157,7 +158,7 @@ class Carousel extends React.Component{
           >
           </RightArrow>
         </Wrapper>
-      </div>
+      </Sizing>
     );
   };
 };

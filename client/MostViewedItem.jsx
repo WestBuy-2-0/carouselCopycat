@@ -31,13 +31,55 @@ const Price = styled.p`
   height: 35px;
 `;
 
-const MostViewedItem = props => (
-  <React.Fragment>
-    <Image src={props.mostViewedItem.image}></Image>
-    <Name><a href={`/${props.mostViewedItem.id}`}>{props.mostViewedItem.name}</a></Name>
-    <div id="star-placeholder">STAR PLACEHOLDER</div>
-    <Price>{props.mostViewedItem.price}</Price>
-  </React.Fragment>
-);
+// const Clickable = styled.span`
+//   text-decoration: none;
+//   color: hot pink;
+//
+//   ${Clickable}:hover,
+//   ${Clickable}:focus {
+//     color: rgb(255, 242, 0);
+//     text-decoration: default;
+//   }
+// `;
+
+const MostViewedItem = props => {
+  let starsId = props.mostViewedItem.id;
+
+  let productId = '/' + props.mostViewedItem.id;
+
+  if (props.mostViewedItem.stock === 0) {
+    return (
+      <React.Fragment>
+        <a href={productId}>
+          <Image src={props.mostViewedItem.image}></Image>
+        </a>
+        <Name>
+          <a href={productId}>
+            {props.mostViewedItem.name}
+          </a>
+        </Name>
+        <div className="stars-carousel" id={starsId}></div>
+        <Price>{props.mostViewedItem.price}</Price>
+        <ClickedButton>Sold Out</ClickedButton>
+      </React.Fragment>
+    );
+  } else {
+    return (
+      <React.Fragment>
+        <a href={`/${props.mostViewedItem.id}`}>
+          <Image src={props.mostViewedItem.image}></Image>
+        </a>
+        <Name>
+          <a href={`/${props.mostViewedItem.id}`}>
+            {props.mostViewedItem.name}
+          </a>
+        </Name>
+        <div className="stars-carousel" id={starsId}></div>
+        <Price>{props.mostViewedItem.price}</Price>
+        <CartButton></CartButton>
+      </React.Fragment>
+    );
+  }
+};
 
 export default MostViewedItem;
