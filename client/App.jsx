@@ -12,13 +12,10 @@ class App extends React.Component {
     super();
     this.state = {
       alsoBoughtItems: [],
-      mostViewedItems: [],
-      currentPage: 1,
-      totalPages: 2
+      mostViewedItems: []
     };
     this.getAlsoBoughtProducts = this.getAlsoBoughtProducts.bind(this);
     this.getMostViewedProducts = this.getMostViewedProducts.bind(this);
-    this.handleCurrentPage = this.handleCurrentPage.bind(this);
   };
 
   componentDidMount() {
@@ -50,19 +47,6 @@ class App extends React.Component {
     })
   };
 
-  // Function to increment/decrement this.state.currentPage
-  handleCurrentPage(direction) {
-    if (direction === "left") {
-      this.setState({
-        currentPage: 1
-      });
-    } else if (direction === "right") {
-      this.setState({
-        currentPage: 2
-      });
-    };
-  };
-
   render() {
 
     let alsoBoughtItem = this.state.alsoBoughtItems.map(product => <AlsoBoughtItem key={product.id}
@@ -73,20 +57,10 @@ class App extends React.Component {
 
     return (
       <div>
-        <Carousel
-          title="People also bought"
-          handleCurrentPage={this.handleCurrentPage}
-          currentPage={this.state.currentPage}
-          totalPages={this.state.totalPages}
-        >
+        <Carousel title="People also bought">
           {alsoBoughtItem}
         </Carousel>
-        <Carousel
-          title="Most-viewed products"
-          handleCurrenPage={this.handleCurrentPage}
-          currentPage={this.state.currentPage}
-          totalPages={this.state.totalPages}
-        >
+        <Carousel title="Most-viewed products">
           {mostViewedItem}
         </Carousel>
       </div>

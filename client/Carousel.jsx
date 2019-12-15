@@ -39,13 +39,16 @@ class Carousel extends React.Component{
     this.state = {
       position: 0,
       sliding: false,
-      direction: 'next'
+      direction: 'next',
+      currentPage: 1,
+      totalPages: 2
     };
 
     this.getOrder = this.getOrder.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
     this.prevSlide = this.prevSlide.bind(this);
     this.doSliding = this.doSliding.bind(this);
+    this.handleCurrentPage = this.handleCurrentPage.bind(this);
   };
 
   /* Takes the DOM index of an item (its initial position on the page) and returns
@@ -94,6 +97,19 @@ class Carousel extends React.Component{
     this.doSliding('prev', position === 0 ? numItems - 1 : position - 5);
   };
 
+  // Function to increment/decrement this.state.currentPage
+  handleCurrentPage(direction) {
+    if (direction === "left") {
+      this.setState({
+        currentPage: 1
+      });
+    } else if (direction === "right") {
+      this.setState({
+        currentPage: 2
+      });
+    };
+  };
+
   render() {
     const {title, children} = this.props;
     const {sliding, direction, position} = this.state;
@@ -103,8 +119,8 @@ class Carousel extends React.Component{
         <Title>{title}</Title>
 
         <Counter
-          currentPage={this.props.currentPage}
-          totalPages={this.props.totalPages}
+          currentPage={this.state.currentPage}
+          totalPages={this.state.totalPages}
         >
         </Counter>
 
@@ -113,9 +129,9 @@ class Carousel extends React.Component{
 
           <LeftArrow
             prevSlide={this.prevSlide}
-            handleCurrentPage={this.props.handleCurrentPage}
-            currentPage={this.props.currentPage}
-            totalPages={this.props.totalPages}
+            handleCurrentPage={this.handleCurrentPage}
+            currentPage={this.state.currentPage}
+            totalPages={this.state.totalPages}
           >
           </LeftArrow>
 
@@ -129,9 +145,9 @@ class Carousel extends React.Component{
 
           <RightArrow
             nextSlide={this.nextSlide}
-            handleCurrentPage={this.props.handleCurrentPage}
-            currentPage={this.props.currentPage}
-            totalPages={this.props.totalPages}
+            handleCurrentPage={this.handleCurrentPage}
+            currentPage={this.state.currentPage}
+            totalPages={this.state.totalPages}
           >
           </RightArrow>
         </Wrapper>
