@@ -6,15 +6,11 @@ const Sizing = styled.div`
   padding: 0 30px 0 30px;
 
   @media screen and (min-width: 1200px) {
-    ${Sizing} {
-      width: 100%;
-    }
+    width: 100%;
   }
 
   @media screen and (min-width: 992px) {
-    ${Sizing} {
-      width: 100%;
-    }
+    width: 100%;
   }
 `;
 
