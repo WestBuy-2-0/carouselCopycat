@@ -38,5 +38,3 @@ const RightArrow = (props) => {
 };
 
 export default RightArrow;
-
-// <Arrows onClick={() => {props.nextSlide(); props.rightArrowClick();}}>

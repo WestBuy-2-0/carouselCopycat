@@ -78,8 +78,6 @@ class App extends React.Component {
     let mostViewedItem = this.state.mostViewedItems.map(product => <MostViewedItem key={product.id}
     mostViewedItem={product} />);
 
-    // <div id = ${productId}-star-placeholder></div>
-
     return (
       <div>
         <Carousel
