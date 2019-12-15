@@ -25,8 +25,8 @@ const Button = styled(ClickedButton)`
 `;
 
 const Image = styled.img`
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 25px;
+  height: 25px;
   float: left;
   padding: 0 1rem 0 0;
   object-fit: scale-down;

@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 import CartButton from './CartButton.jsx';
+import ClickedButton from './ClickedButton.jsx';
 
 const Image = styled.img`
   width: 100px;
   height: 100px;
   display: block;
-  margin: auto;
+  margin: 0 0 0 25px;
   object-fit: scale-down;
 `;
 

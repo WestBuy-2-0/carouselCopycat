@@ -7,13 +7,6 @@ import Carousel from './Carousel.jsx';
 import AlsoBoughtItem from './AlsoBoughtItem.jsx';
 import MostViewedItem from './MostViewedItem.jsx';
 
-const Item = styled.div`
-  background: blue;
-  text-align: center;
-  padding: 50px;
-  color: yellow;
-`;
-
 class App extends React.Component {
   constructor() {
     super();
