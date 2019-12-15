@@ -25,14 +25,9 @@ const Button = styled(ClickedButton)`
 `;
 
 const Image = styled.img`
-  width: 25px;
   height: 25px;
   float: left;
-  padding: 0 1rem 0 0;
-  object-fit: scale-down;
 `;
-
-{/* TO DO: 1) Change button's styling when clicked; 2) Increment cart number */}
 
 class CartButton extends React.Component {
   constructor() {
