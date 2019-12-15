@@ -6,6 +6,7 @@ import axios from 'axios';
 import Carousel from './Carousel.jsx';
 import AlsoBoughtItem from './AlsoBoughtItem.jsx';
 import MostViewedItem from './MostViewedItem.jsx';
+import Sizing from './Sizing.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -56,14 +57,14 @@ class App extends React.Component {
     mostViewedItem={product} />);
 
     return (
-      <div>
+      <Sizing>
         <Carousel title="People also bought">
           {alsoBoughtItem}
         </Carousel>
         <Carousel title="Most-viewed products">
           {mostViewedItem}
         </Carousel>
-      </div>
+      </Sizing>
     );
   };
 };

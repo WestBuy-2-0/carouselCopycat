@@ -115,43 +115,43 @@ class Carousel extends React.Component{
     const {sliding, direction, position} = this.state;
 
     return (
-      <Sizing>
-        <Title>{title}</Title>
+      <div style={{"width": "100%"}}>
+          <Title>{title}</Title>
 
-        <Counter
-          currentPage={this.state.currentPage}
-          totalPages={this.state.totalPages}
-        >
-        </Counter>
-
-        <Wrapper>
-          <Border></Border>
-
-          <LeftArrow
-            prevSlide={this.prevSlide}
-            handleCurrentPage={this.handleCurrentPage}
+          <Counter
             currentPage={this.state.currentPage}
             totalPages={this.state.totalPages}
           >
-          </LeftArrow>
+          </Counter>
 
-            <CarouselContainer sliding={sliding} direction={direction}>
-              {children.map((child, index) => (
-                <CarouselSlot key={index} order={this.getOrder(index)}>
-                  {child}
-                </CarouselSlot>
-              ))};
-            </CarouselContainer>
+          <Wrapper>
+            <Border></Border>
 
-          <RightArrow
-            nextSlide={this.nextSlide}
-            handleCurrentPage={this.handleCurrentPage}
-            currentPage={this.state.currentPage}
-            totalPages={this.state.totalPages}
-          >
-          </RightArrow>
-        </Wrapper>
-      </Sizing>
+            <LeftArrow
+              prevSlide={this.prevSlide}
+              handleCurrentPage={this.handleCurrentPage}
+              currentPage={this.state.currentPage}
+              totalPages={this.state.totalPages}
+            >
+            </LeftArrow>
+
+              <CarouselContainer sliding={sliding} direction={direction}>
+                {children.map((child, index) => (
+                  <CarouselSlot key={index} order={this.getOrder(index)}>
+                    {child}
+                  </CarouselSlot>
+                ))};
+              </CarouselContainer>
+
+            <RightArrow
+              nextSlide={this.nextSlide}
+              handleCurrentPage={this.handleCurrentPage}
+              currentPage={this.state.currentPage}
+              totalPages={this.state.totalPages}
+            >
+            </RightArrow>
+          </Wrapper>
+      </div>
     );
   };
 };
