@@ -35,7 +35,7 @@ const Price = styled.p`
 const MostViewedItem = props => {
   let starsId = props.mostViewedItem.id;
 
-  let productId = '../' + props.mostViewedItem.id;
+  let productId = 'products/' + props.mostViewedItem.id;
 
   if (props.mostViewedItem.stock === 0) {
     return (
