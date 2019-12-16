@@ -32,17 +32,6 @@ const Price = styled.p`
   height: 35px;
 `;
 
-// const Clickable = styled.span`
-//   text-decoration: none;
-//   color: hot pink;
-//
-//   ${Clickable}:hover,
-//   ${Clickable}:focus {
-//     color: rgb(255, 242, 0);
-//     text-decoration: default;
-//   }
-// `;
-
 const MostViewedItem = props => {
   let starsId = props.mostViewedItem.id;
 

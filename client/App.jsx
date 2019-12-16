@@ -7,21 +7,21 @@ import Carousel from './Carousel.jsx';
 import AlsoBoughtItem from './AlsoBoughtItem.jsx';
 import MostViewedItem from './MostViewedItem.jsx';
 import Sizing from './Sizing.jsx';
+import mostViewedProducts from './MostViewedProductsData.js';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       alsoBoughtItems: [],
-      mostViewedItems: []
+      mostViewedItems: mostViewedProducts
     };
     this.getAlsoBoughtProducts = this.getAlsoBoughtProducts.bind(this);
-    this.getMostViewedProducts = this.getMostViewedProducts.bind(this);
   };
 
   componentDidMount() {
     this.getAlsoBoughtProducts();
-    this.getMostViewedProducts();
+    this.state.mostViewedItems;
   };
 
   getAlsoBoughtProducts() {
@@ -29,18 +29,6 @@ class App extends React.Component {
     .then(response => {
       this.setState({
         alsoBoughtItems: response.data
-      })
-    })
-    .catch(error => {
-      console.log(error);
-    })
-  };
-
-  getMostViewedProducts() {
-    axios.get('http://westbuycarousel-env.8mbhtr3m3h.us-east-2.elasticbeanstalk.com/products')
-    .then(response => {
-      this.setState({
-        mostViewedItems: response.data
       })
     })
     .catch(error => {

@@ -27,6 +27,7 @@ const Button = styled(ClickedButton)`
 const Image = styled.img`
   height: 25px;
   float: left;
+  padding-right: 10px;
 `;
 
 class CartButton extends React.Component {

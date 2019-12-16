@@ -10,19 +10,8 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-// Successfully demonstrated connection between server and database on Postman
-// const testQuery = callback => {
-//   connection.query('SELECT 1 + 1 AS solution', (error, results) => {
-//     if (error) {
-//       callback(error, null);
-//     } else {
-//       callback(null, results);
-//     }
-//   });
-// };
-
 const retrieveRandomProducts = callback => {
-  connection.query('SELECT * FROM products ORDER BY RAND() LIMIT 10', (error, results) => {
+  connection.query('SELECT * FROM products WHERE id!=57 AND id!=46 AND id!=39 AND id!=53 AND id!=26 AND id!=100 AND id!=14 AND id!=60 AND id!=66 AND id!=95 ORDER BY RAND() LIMIT 10', (error, results) => {
     if (error) {
       callback(error, null);
     } else {

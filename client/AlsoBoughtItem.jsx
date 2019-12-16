@@ -20,11 +20,6 @@ const Name = styled.p`
   font-size: 13px;
   max-height: 48px;
   height: 35px;
-
-  ${Name}:hover {
-    color: hot pink;
-    text-decoration: default;
-  }
 `;
 
 const Price = styled.p`
@@ -37,17 +32,6 @@ const Price = styled.p`
   line-height: 18px;
   height: 35px;
 `;
-
-// const Clickable = styled.span`
-//   text-decoration: none;
-//   color: blue;
-//
-//   ${Clickable}:hover,
-//   ${Clickable}:focus {
-//     color: rgb(255, 242, 0);
-//     text-decoration: default;
-//   }
-// `;
 
 const AlsoBoughtItem = props => {
 
