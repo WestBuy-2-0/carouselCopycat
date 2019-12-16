@@ -58,11 +58,11 @@ const AlsoBoughtItem = props => {
   } else {
     return (
       <React.Fragment>
-        <a href={`/${props.alsoBoughtItem.id}`}>
+        <a href={productId}>
           <Image src={props.alsoBoughtItem.image}></Image>
         </a>
         <Name>
-          <a href={`/${props.alsoBoughtItem.id}`}>
+          <a href={productId}>
             {props.alsoBoughtItem.name}
           </a>
         </Name>

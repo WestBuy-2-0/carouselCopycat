@@ -56,11 +56,11 @@ const MostViewedItem = props => {
   } else {
     return (
       <React.Fragment>
-        <a href={`/${props.mostViewedItem.id}`}>
+        <a href={productId}>
           <Image src={props.mostViewedItem.image}></Image>
         </a>
         <Name>
-          <a href={`/${props.mostViewedItem.id}`}>
+          <a href={productId}>
             {props.mostViewedItem.name}
           </a>
         </Name>

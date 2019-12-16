@@ -22,7 +22,6 @@ class App extends React.Component {
   componentDidMount() {
     this.getAlsoBoughtProducts();
     this.state.mostViewedItems;
-    console.log("I'm updating!");
   };
 
   getAlsoBoughtProducts() {
