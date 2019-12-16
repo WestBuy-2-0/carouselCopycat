@@ -37,7 +37,7 @@ const AlsoBoughtItem = props => {
 
   let starsId = props.alsoBoughtItem.id;
 
-  let productId = 'products/' + props.alsoBoughtItem.id;
+  let productId = '/products/' + props.alsoBoughtItem.id;
 
   if (props.alsoBoughtItem.stock === 0) {
     return (
