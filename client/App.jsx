@@ -25,8 +25,9 @@ class App extends React.Component {
   };
 
   getAlsoBoughtProducts() {
-    axios.get('http://westbuycarousel-env.8mbhtr3m3h.us-east-2.elasticbeanstalk.com/products')
+    axios.get('/products')
     .then(response => {
+      console.log(response.data);
       this.setState({
         alsoBoughtItems: response.data
       })
@@ -58,3 +59,6 @@ class App extends React.Component {
 };
 
 export default App;
+
+
+//http://westbuycarousel-env.8mbhtr3m3h.us-east-2.elasticbeanstalk.com/products

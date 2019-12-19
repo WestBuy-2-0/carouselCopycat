@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-  host: 'db-carousel.chpmnqo9n8lu.us-east-2.rds.amazonaws.com',
+  host: 'localhost',
   port: 3306,
   user: 'root',
   password: 'password',
@@ -21,3 +21,6 @@ const retrieveRandomProducts = callback => {
 };
 
 module.exports = {connection, retrieveRandomProducts};
+
+
+//db-carousel.chpmnqo9n8lu.us-east-2.rds.amazonaws.com
